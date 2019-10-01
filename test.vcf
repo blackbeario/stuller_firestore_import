@@ -1,6 +1,50 @@
 BEGIN:VCARD
 VERSION:3.0
 PRODID:-//Apple Inc.//Mac OS X 10.13.6//EN
+N:A. Swenson;John;;;
+FN:John A. /Swenson
+NICKNAME:7kw Genrac-?-
+ORG:June-Dec;Due 12/2019
+TITLE:$240.20
+item1.EMAIL;type=INTERNET;type=pref:nanarose415@gmail.com
+item1.X-ABLabel:Email
+TEL;type=MAIN;type=pref:8288918944
+item2.TEL:8282436794
+item2.X-ABLabel:cell
+ADR;type=HOME;type=pref:;;415 Sassafras Dr;Hendersonville;NC;28739;
+item15.ADR:;;?;;;;
+item15.X-ABLabel:Billing
+NOTE:6/4/19- paid thru 12/2019\n6/14/19 12m Kon- Generator looks great and transferred at 240vac at 60hz\, all is well. \n
+item3.X-ABRELATEDNAMES;type=pref:9487210
+item3.X-ABLabel:Serial #
+item4.X-ABRELATEDNAMES:0065190
+item4.X-ABLabel:Model #
+item5.X-ABRELATEDNAMES:test
+item5.X-ABLabel:Oil Filter
+item6.X-ABRELATEDNAMES:test
+item6.X-ABLabel:Air Filter
+item7.X-ABRELATEDNAMES:test
+item7.X-ABLabel:Spark Plugs
+item8.X-ABRELATEDNAMES:test
+item8.X-ABLabel:Exercise Time
+item9.X-ABRELATEDNAMES:test
+item9.X-ABLabel:Battery Age
+item10.X-ABRELATEDNAMES:Expired
+item10.X-ABLabel:Warranty
+item11.X-ABRELATEDNAMES:test
+item11.X-ABLabel:Location
+item12.X-ABRELATEDNAMES:test
+item12.X-ABLabel:Xfer S#
+item13.X-ABRELATEDNAMES:test
+item13.X-ABLabel:WIFI
+item14.X-ABRELATEDNAMES:?
+item14.X-ABLabel:Xfer Location
+UID:da920148-df87-4ed6-ab31-72e0e38c966e
+X-ABUID:F3B55822-569F-4AFC-8360-6C5481DD31ED:ABPerson
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//Mac OS X 10.13.6//EN
 N:;Hendersonville Country Club;;;
 FN:Hendersonville Country Club 
 NICKNAME:12 kw Gillette-?
@@ -34,8 +78,6 @@ item11.X-ABRELATEDNAMES:SPH-120-1-1
 item11.X-ABLabel:Model #
 item12.X-ABRELATEDNAMES:Local $185
 item12.X-ABLabel:Payment
-item13.X-ABRELATEDNAMES:Outside
-item13.X-ABLabel:Xfer Location
 item14.X-ABRELATEDNAMES:?
 item14.X-ABLabel:Oil Filter
 item15.X-ABRELATEDNAMES:?
@@ -49,4 +91,15 @@ item18.X-ABLabel:Xfer S#
 item19.X-ABRELATEDNAMES:?
 item19.X-ABLabel:WIFI
 X-ABUID:D5053317-C746-41D1-AE13-348DEFF8A90E:ABPerson
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//Mac OS X 10.13.6//EN
+N:Cole;Jim;;;
+EMAIL;type=INTERNET;type=WORK;type=pref:heavytimbers@aol.com
+TEL;type=CELL;type=VOICE;type=pref:8287021397
+item1.ADR;type=WORK;type=pref:;;220 Red Tail Trail\nMill Springs\, NC 28756;;;;
+item1.X-ABADR:us
+X-ABShowAs:COMPANY
+X-ABUID:2BA3AB35-7BCD-4AEC-B86D-9EF3DB3BA19E
 END:VCARD
