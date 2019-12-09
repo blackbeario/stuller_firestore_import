@@ -1,9 +1,9 @@
 var vcard = require('vcard-json');
 const fs = require('fs');
-var file = './StullerContacts.json';
+var file = './data/StullerContacts.json';
 var arr = {customers:{}};
 
-vcard.parseVcardFile('./StullerContacts.vcf', function(err, data){
+vcard.parseVcardFile('./data/StullerContacts.vcf', function(err, data){
   // Add logic here to setup json fields correctly.
   try {
     data.forEach(element => {
@@ -23,6 +23,8 @@ vcard.parseVcardFile('./StullerContacts.vcf', function(err, data){
       // An empty object will not create an address in Firestore.
       else billing = {};
 
+      $notes = element.note.split("\\n").join("\n").split("\\").join("");
+
       // Create the new customer array.
       arr.customers[element.fullname] = {
         'firstName': $firstName,
@@ -30,7 +32,7 @@ vcard.parseVcardFile('./StullerContacts.vcf', function(err, data){
         'email': element.email[0] ? element.email[0].value : '',
         'main': element.phone[0] ? element.phone[0].value : '',
         'mobile': element.cell,
-        'notes': element.note,
+        'notes': $notes,
         'payment': element.payment,
         'locations': {
           billing,
