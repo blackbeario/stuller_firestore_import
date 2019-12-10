@@ -11,7 +11,6 @@
   "dependencies": {
     "@google/maps": "^1.0.1",
     "firebase-admin": "^8.6.0",
-    "firestore-export-import": "^0.2.9",
     "geohash": "0.0.1",
     "vcard-json": "^0.5.2"
   }

@@ -1,6 +1,6 @@
 // Imports
 const admin = require('firebase-admin');
-const serviceAccount = require('./serviceAccount.json');
+const serviceAccount = require('./data/serviceAccount.json');
 const data = require("./data/StullerContacts.json");
 
 admin.initializeApp({

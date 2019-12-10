@@ -1,3 +1,4 @@
+/* This file initializes Firestore cloud functions */
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 admin.initializeApp()
@@ -9,13 +10,13 @@ const Geohash = require('ngeohash');
 
 // Triggers must always point to a document, not a collection.
 exports.createGeoPoint = functions.firestore
-  .document('customers/{customerID}/locations/primary')
+  .document('customers/{customerID}')
   .onCreate(async (snap) => {
     const newData = snap.data();
     var geo = {};
     
     // Use these fields to compute the latitude/longitude.
-    const $address = newData.address + ', ' + newData.city + ', ' + newData.state;
+    const $address = newData.locations.primary.address + ', ' + newData.locations.primary.city + ', ' + newData.locations.primary.state;
 
     await googleMapsClient.geocode({address: $address})
       .asPromise()
@@ -45,18 +46,18 @@ exports.createGeoPoint = functions.firestore
 
   // Triggers must always point to a document, not a collection.
 exports.updateGeoPoint = functions.firestore
-  .document('customers/{customerID}/locations/primary')
+  .document('customers/{customerID}')
   .onUpdate( async (change) => {
     const afterData = change.after.data();
     const previousData = change.before.data();
 
     // We'll only update if the geopoint has changed.
     // This is crucial to prevent infinite loops.
-    if (afterData.address === previousData.address) return null;
+    if (afterData.locations.primary.address === previousData.locations.primary.address) return null;
     var geo = {};
     
     // Use these fields to compute the latitude/longitude.
-    const $address = afterData.address + ', ' + afterData.city + ', ' + afterData.state;
+    const $address = afterData.locations.primary.address + ', ' + afterData.locations.primary.city + ', ' + afterData.locations.primary.state;
 
     await googleMapsClient.geocode({address: $address})
       .asPromise()

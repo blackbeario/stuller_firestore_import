@@ -1,8 +1,9 @@
 var vcard = require('vcard-json');
 const fs = require('fs');
-var file = './data/StullerContacts.json';
+var file = './data/StullerContacts.json'; // Our output file
 var arr = {customers:{}};
 
+// Parse the data from here:
 vcard.parseVcardFile('./data/StullerContacts.vcf', function(err, data){
   // Add logic here to setup json fields correctly.
   try {
@@ -29,22 +30,24 @@ vcard.parseVcardFile('./data/StullerContacts.vcf', function(err, data){
       arr.customers[element.fullname] = {
         'firstName': $firstName,
         'lastName': $lastName,
+        'service': element.service,
+        'due': element.due,
+        'amount': element.amount,
         'email': element.email[0] ? element.email[0].value : '',
         'main': element.phone[0] ? element.phone[0].value : '',
         'mobile': element.cell,
         'notes': $notes,
         'payment': element.payment,
         'locations': {
-          billing,
+          'hack': '',
           'primary': {
-            'name': 'home',
-            'address': element.addr[0] ? element.addr[0].street : '',
-            'city': element.addr[0] ? element.addr[0].city : '',
-            'state': element.addr[0] ? element.addr[0].region : '',
-            'zipcode': element.addr[0] ? element.addr[0].zip : '',
-            'area': element.addr[0] ? element.addr[0].locality : '',
-            'generators': {
-              'gen': {
+              'name': 'home',
+              'address': element.addr[0] ? element.addr[0].street : '',
+              'city': element.addr[0] ? element.addr[0].city : '',
+              'state': element.addr[0] ? element.addr[0].region : '',
+              'zipcode': element.addr[0] ? element.addr[0].zip : '',
+              'area': element.addr[0] ? element.addr[0].locality : '',
+              'generator': {
                 'generator': element.generator ? element.generator : element.nickname,
                 'model': element.model,
                 'serial': element.serial,
@@ -59,9 +62,9 @@ vcard.parseVcardFile('./data/StullerContacts.vcf', function(err, data){
                 'location': element.location,
                 'wifi': element.wifi
               }
-            }
-          }
-        }
+            },
+          billing,
+        },
       };
     });
 
