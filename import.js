@@ -1,7 +1,7 @@
 // Imports
 const admin = require('firebase-admin');
 const serviceAccount = require('./data/serviceAccount.json');
-const data = require("./data/StullerContacts.json");
+const data = require("./data/test.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),

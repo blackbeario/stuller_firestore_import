@@ -13,6 +13,12 @@
 
 # Optional
 4. geohash `npm install geohash` (Only needed for cloud firestore functions)
+5. GoogleMaps API key
+
+# Cloud Functions
+This repo includes two cloud functions in functions/index.js, createGeoPoint and updateGeoPoint. These functions will either create or update a geopoint based on a customer address, using GoogleMaps API.
+
+To deploy these functions or changes to them, you will need to make sure you thoroughly read through the docs https://firebase.google.com/docs/functions/get-started. Then once everything is setup, simply run `firebase deploy`.
 
 First, you need to setup a node application in Firestore and get the required `serviceAccount` information. Store this in a serviceAccount.json file. It will be required in import.js.
 
